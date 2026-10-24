@@ -63,4 +63,6 @@ Please use **[Issues](https://github.com/Tum-Soil-Biophysics/SoPhyFit/issues)** 
 
 ## License
 
-SoPhyFit is free to use for research and teaching. See [LICENSE.md](LICENSE.md) for the terms.
+Copyright (c) 2026 Mohsen Zarebanadkouki, Chair of Soil Biophysics and Environmental Systems, Technical University of Munich.
+
+SoPhyFit and its user guide are licensed under the [Creative Commons Attribution 4.0 International License (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/). You may use, share and adapt them for any purpose, provided you give appropriate credit (cite SoPhyFit as shown above). See [LICENSE](LICENSE) for the full terms. SoPhyFit is provided as is, without warranty of any kind.

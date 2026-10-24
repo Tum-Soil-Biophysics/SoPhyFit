@@ -1,66 +1,64 @@
-# [Project title]
+# SoPhyFit
 
-> **How to use this template:** click **Use this template → Create a new repository**, choose the owner **Tum-Soil-Biophysics**, keep it **Private**, and name it `Topic_Method` (e.g. `RWU_NeutronRadiographyD2O_InverseModelling`). Then replace every `[...]` below and delete this note.
+**Soil water retention, pore sizes and hydraulic conductivity, with 95% confidence intervals.**
 
-[One or two sentences: what this code does and which question it answers.]
+SoPhyFit (Soil Physics Fit) fits soil water retention curves to measured data and reports every derived quantity with a 95% confidence interval. It predicts the unsaturated hydraulic conductivity and the pore-size distribution from the fitted curve. It is a Windows desktop program with a step-by-step interface; no programming or Python installation is needed.
 
-**Related article:** [Authors (Year). Title. Journal. DOI] *(add at acceptance)*
-**Code DOI (Zenodo):** [DOI] *(created with the first release)*
+Developed at the [Chair of Soil Biophysics and Environmental Systems](https://www.lss.ls.tum.de/sbe/), Technical University of Munich.
 
-## Data
+![SoPhyFit Graphic Summary: retention curves of four samples with 95% confidence bands](docs/images/graphic_summary.png)
 
-Raw and large data are **not** stored in this repository.
+## Features
 
-| Data | Location |
+- **Six retention models:** van Genuchten (1980), Brooks and Corey (1964), Kosugi (1996), bimodal van Genuchten (Durner, 1994), and the PDI variants of the unimodal and bimodal van Genuchten models for the dry range (Peters, 2013; Iden and Durner, 2014; Peters et al., 2024).
+- **95% confidence intervals on every result:** parameters, the fitted curve, water content at given heads, plant-available water, matric potential at given water contents, pore-class volumes and conductivity.
+- **Specific points:** field capacity, permanent wilting point, plant-available water content, and the matric potential at any water content.
+- **Pore-size distribution and pore classes:** volume-based distribution from the Young–Laplace equation; KA5 pore classes or user-defined classes.
+- **Hydraulic conductivity K(h):** Mualem (1976) model with a measured or predicted saturated conductivity (Peters et al., 2023), optional maximum pore size (h_clip), film flow (Peters et al., 2021) and isothermal vapor flow (Saito et al., 2006).
+- **Free choice of units:** h in cm, hPa or kPa; θ in cm³/cm³ or %; K in cm/d, cm/h, mm/h, mm/d, m/d or m/s.
+- **Batch processing:** all samples of a data set are fitted separately and compared in shared figures and one summary workbook.
+- **Outputs:** publication-ready figures (PNG), Excel workbooks per sample and for all samples, and text reports.
+
+## Screenshots
+
+| Six models fitted to one sample | KA5 pore classes and pore-size distribution |
 |---|---|
-| Raw data (during the project) | Group drive `\\nas.ads.mwn.de\tus4\b1e\[path]` |
-| Published data | [mediaTUM or Zenodo DOI] *(at publication)* |
-| Small example data | `data/example/` |
+| ![Model comparison](docs/images/model_comparison.png) | ![Pore classes](docs/images/pore_classes.png) |
 
-## Structure
+| Hydraulic conductivity predicted from the retention curve | Define Problem page |
+|---|---|
+| ![Hydraulic conductivity](docs/images/conductivity.png) | ![Define Problem page](docs/images/define_problem.png) |
 
-```
-code/              scripts and functions
-notebooks/         Jupyter notebooks (exploration, figures)
-data/example/      small example data only (a few MB)
-results/figures/   figures produced by the code
-requirements.txt   Python packages
-CITATION.cff       how to cite this code
-```
+## Download and install
 
-## Installation
+1. Go to **[Releases](https://github.com/Tum-Soil-Biophysics/SoPhyFit/releases/latest)** and download `SoPhyFit_Setup_<version>.exe`.
+2. Run the file and follow the setup wizard. No administrator rights are needed; the program installs for the current user.
+3. Start SoPhyFit from the Start menu. Projects are saved to `Documents\SoPhyFit`.
 
-```bash
-git clone https://github.com/Tum-Soil-Biophysics/[repository].git
-cd [repository]
-python -m venv .venv
-.venv\Scripts\activate          # Windows  (macOS/Linux: source .venv/bin/activate)
-pip install -r requirements.txt
-```
+Requirements: Windows 10 or 11, 64-bit.
 
-## How to run
+## Updates
 
-```bash
-python code/[script].py --input data/example
-```
+SoPhyFit checks for a new version each time it starts (this needs an internet connection; only the latest version number is requested from GitHub, no data is sent). You can also choose **Help → Check for Updates**. To update, download the new setup file and run it: it replaces the old version and keeps your projects.
 
-[Describe the main steps, inputs and outputs.]
+To be notified by email, click **Watch → Custom → Releases** at the top of this page.
 
-## Releases and DOI
+## Documentation
 
-Every **release** of this repository gets a Zenodo DOI automatically, once the repository is **public**.
+The **[User Guide (PDF)](docs/SoPhyFit_User_Guide.pdf)** explains the scientific background of every model and method, with figures, and how to use the program. It also opens from **Help → User Guide** in the program.
 
-1. Fill in `.zenodo.json` (title, authors, description, keywords). The release stops if placeholders are left.
-2. On GitHub: **Releases → Draft a new release**, tag `v1.0`, **Publish release**.
-3. After about two minutes the DOI appears at the bottom of the release notes.
+## How to cite
 
-Pre-releases and private repositories are skipped. Later releases (`v1.1`, `v2.0`) become new versions of the same Zenodo record. A DOI is permanent, so release only at milestones (submission, acceptance, bug fix).
+If you use SoPhyFit in your work, please cite it:
 
-## Authors
+> Zarebanadkouki, M. (2026). SoPhyFit: soil water retention, pore sizes and hydraulic conductivity with 95% confidence intervals (Version 1.0.0) [Computer software]. Technical University of Munich. Zenodo. https://doi.org/[DOI]
 
-[Name], [Name], Mohsen Zarebanadkouki
-Professorship for Soil Biophysics and Environmental Systems, Technical University of Munich
+Each release is archived on [Zenodo](https://zenodo.org/communities/tum-sbe) with its own DOI, listed at the end of the release notes. Cite the version you used. GitHub also shows a **"Cite this repository"** button with this citation in other formats.
+
+## Feedback and bug reports
+
+Please use **[Issues](https://github.com/Tum-Soil-Biophysics/SoPhyFit/issues)** to report a problem or suggest a feature.
 
 ## License
 
-MIT, see [LICENSE](LICENSE). If you use this code, please cite the related article and this repository (see [CITATION.cff](CITATION.cff)).
+SoPhyFit is free to use for research and teaching. See [LICENSE.md](LICENSE.md) for the terms.

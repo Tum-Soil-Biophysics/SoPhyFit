@@ -1,3 +1,7 @@
+# --- SoPhyFit: installers are attached to Releases, never committed ---
+*.exe
+Installer/
+
 # --- Data: raw and large data stay on the group drive (b1e), not in Git ---
 data/*
 !data/example/

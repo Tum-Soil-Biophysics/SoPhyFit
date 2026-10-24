@@ -1,4 +1,5 @@
 # Publishes every GitHub release of a PUBLIC repository to Zenodo and adds the DOI to the release notes.
+# Uploads the source archive of the tag AND every file attached to the release (e.g. the installer).
 # - First release: creates a new Zenodo record (new DOI).
 # - Later releases: create a new version of the same record (same concept DOI).
 # - Pre-releases and private repositories are skipped; unticking "pre-release" later triggers it.
@@ -30,11 +31,21 @@ jobs:
         env:
           TAG: ${{ github.event.release.tag_name }}
 
+      - name: Download the files attached to the release (e.g. the installer)
+        run: |
+          mkdir -p "${RUNNER_TEMP}/assets"
+          gh release download "$TAG" --dir "${RUNNER_TEMP}/assets" || echo "No release assets."
+          ls -l "${RUNNER_TEMP}/assets"
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.event.release.tag_name }}
+
       - name: Publish on Zenodo
         id: zenodo
         run: |
           pip install --quiet requests
-          python .github/scripts/zenodo_release.py "$ARCHIVE"
+          shopt -s nullglob
+          python .github/scripts/zenodo_release.py "$ARCHIVE" "${RUNNER_TEMP}"/assets/*
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
           ZENODO_SANDBOX: ${{ vars.ZENODO_SANDBOX }}

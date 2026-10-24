@@ -1,5 +1,7 @@
 # SoPhyFit
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23626256.svg)](https://doi.org/10.5281/zenodo.23626256)
+
 **Soil water retention, pore sizes and hydraulic conductivity, with 95% confidence intervals.**
 
 SoPhyFit (Soil Physics Fit) fits soil water retention curves to measured data and reports every derived quantity with a 95% confidence interval. It predicts the unsaturated hydraulic conductivity and the pore-size distribution from the fitted curve. It is a Windows desktop program with a step-by-step interface; no programming or Python installation is needed.
@@ -51,9 +53,9 @@ The **[User Guide (PDF)](docs/SoPhyFit_User_Guide.pdf)** explains the scientific
 
 If you use SoPhyFit in your work, please cite it:
 
-> Zarebanadkouki, M. (2026). SoPhyFit: soil water retention, pore sizes and hydraulic conductivity with 95% confidence intervals (Version 1.0.0) [Computer software]. Technical University of Munich. Zenodo. https://doi.org/[DOI]
+> Zarebanadkouki, M. (2026). SoPhyFit: soil water retention, pore sizes and hydraulic conductivity with 95% confidence intervals (Version 1.0.0) [Computer software]. Technical University of Munich. Zenodo. https://doi.org/10.5281/zenodo.23626256
 
-Each release is archived on [Zenodo](https://zenodo.org/communities/tum-sbe) with its own DOI, listed at the end of the release notes. Cite the version you used. GitHub also shows a **"Cite this repository"** button with this citation in other formats.
+The DOI above (10.5281/zenodo.23626256) always resolves to the latest version. Each release is also archived on [Zenodo](https://zenodo.org/communities/tum-sbe) with its own version DOI, listed at the end of the release notes. Cite the version you used. GitHub also shows a **"Cite this repository"** button with this citation in other formats.
 
 ## Feedback and bug reports
 

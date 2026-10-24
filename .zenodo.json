@@ -1,23 +1,25 @@
 {
-  "title": "[Repository name]: [short description]",
+  "title": "SoPhyFit: soil water retention, pore sizes and hydraulic conductivity with 95% confidence intervals",
   "upload_type": "software",
-  "description": "[What the code does, which article it belongs to, and how to run it. Two to four sentences.]",
+  "description": "<p>SoPhyFit fits soil water retention curves with six models (van Genuchten, Brooks-Corey, Kosugi, bimodal van Genuchten, and the PDI variants for the dry range), reports all parameters and derived quantities with 95% confidence intervals, and predicts the pore-size distribution, pore-class volumes and the unsaturated hydraulic conductivity from the fitted curve.</p><p>This record contains the Windows installer (SoPhyFit_Setup_&lt;version&gt;.exe), the user guide and the documentation. Releases: https://github.com/Tum-Soil-Biophysics/SoPhyFit/releases</p>",
   "creators": [
-    {
-      "name": "[Family name], [Given name]",
-      "affiliation": "Technical University of Munich"
-    },
     {
       "name": "Zarebanadkouki, Mohsen",
       "affiliation": "Technical University of Munich"
     }
   ],
-  "license": "mit",
   "keywords": [
     "soil physics",
-    "[keyword]"
+    "soil water retention curve",
+    "soil hydraulic properties",
+    "van Genuchten",
+    "PDI model",
+    "pore-size distribution",
+    "unsaturated hydraulic conductivity",
+    "confidence intervals"
   ],
   "access_right": "open",
+  "language": "eng",
   "communities": [
     {
       "identifier": "tum-sbe"

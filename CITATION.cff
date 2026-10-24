@@ -1,28 +1,29 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite it as below."
-title: "[Repository name]: [short description]"
+message: "If you use SoPhyFit, please cite it as below."
 type: software
+title: "SoPhyFit: soil water retention, pore sizes and hydraulic conductivity with 95% confidence intervals"
+version: "1.0.0"
+date-released: "2026-10-24"
 authors:
-  - family-names: "[Family name]"
-    given-names: "[Given name]"
-    affiliation: "Technical University of Munich"
   - family-names: "Zarebanadkouki"
     given-names: "Mohsen"
     affiliation: "Technical University of Munich"
-repository-code: "https://github.com/Tum-Soil-Biophysics/[repository]"
+    # orcid: "https://orcid.org/0000-0000-0000-0000"
+repository-code: "https://github.com/Tum-Soil-Biophysics/SoPhyFit"
 url: "https://www.lss.ls.tum.de/sbe/"
-license: MIT
-version: "1.0.0"
-date-released: "[YYYY-MM-DD]"
+# doi: "10.5281/zenodo.XXXXXXX"
+license-url: "https://github.com/Tum-Soil-Biophysics/SoPhyFit/blob/main/LICENSE.md"
 keywords:
-  - "[keyword]"
-# Add the related article once its DOI is known:
-# preferred-citation:
-#   type: article
-#   authors:
-#     - family-names: "[Family name]"
-#       given-names: "[Given name]"
-#   title: "[Article title]"
-#   journal: "[Journal]"
-#   year: [Year]
-#   doi: "[DOI]"
+  - soil water retention curve
+  - soil hydraulic properties
+  - van Genuchten
+  - PDI model
+  - pore-size distribution
+  - unsaturated hydraulic conductivity
+  - confidence intervals
+abstract: >-
+  SoPhyFit fits soil water retention curves with six models (van Genuchten,
+  Brooks-Corey, Kosugi, bimodal van Genuchten, and the PDI variants for the
+  dry range), reports all parameters and derived quantities with 95%
+  confidence intervals, and predicts the pore-size distribution, pore-class
+  volumes and the unsaturated hydraulic conductivity from the fitted curve.

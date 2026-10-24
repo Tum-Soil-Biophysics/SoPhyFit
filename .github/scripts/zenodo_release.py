@@ -1,6 +1,8 @@
 """Upload a GitHub release to Zenodo (new record, or new version of the existing record).
 
-Called by .github/workflows/zenodo-release.yml. Metadata come from .zenodo.json.
+Called by .github/workflows/zenodo-release.yml with the files to upload
+(the source archive of the tag, then the files attached to the release).
+Metadata come from .zenodo.json.
 The record is matched to earlier versions through the repository URL in related_identifiers.
 """
 import datetime
@@ -17,7 +19,7 @@ REPO = os.environ["GITHUB_REPOSITORY"]
 REPO_URL = f"https://github.com/{REPO}"
 NAME = REPO.split("/", 1)[1]
 TAG = os.environ["TAG"]
-ARCHIVE = sys.argv[1]
+FILES = sys.argv[1:]          # source archive first, then the release assets
 H = {"Authorization": f"Bearer {TOKEN}"}
 
 
@@ -33,6 +35,8 @@ def call(method, url, **kw):
     return r.json() if r.content else {}
 
 
+if not FILES:
+    fail("No files to upload.")
 if not TOKEN:
     fail("The secret ZENODO_TOKEN is missing (Organization settings > Secrets and variables > Actions).")
 
@@ -88,8 +92,10 @@ else:
     draft = call("POST", f"{BASE}/deposit/depositions", json={})
 
 try:
-    with open(ARCHIVE, "rb") as fh:
-        call("PUT", f"{draft['links']['bucket']}/{os.path.basename(ARCHIVE)}", data=fh)
+    for path in FILES:
+        print(f"Uploading {os.path.basename(path)} ({os.path.getsize(path) / 1e6:.1f} MB)")
+        with open(path, "rb") as fh:
+            call("PUT", f"{draft['links']['bucket']}/{os.path.basename(path)}", data=fh)
     call("PUT", draft["links"]["self"], json={"metadata": meta})
     done = call("POST", draft["links"]["publish"])
 except SystemExit:

@@ -12,6 +12,7 @@ Results do not differ from version 1.0.0.
 - New subtitle: "Soil physics fitting tool for retention, pore-size distribution and conductivity".
 - New Cite Us tab: citation and BibTeX with the DOI of the installed version (read from its release notes), the DOI of all versions, and the references of the models.
 - About shows the DOIs.
+- License: CC BY-NC-ND 4.0 (free use and sharing with credit; no commercial use, no modified versions). Replaces the earlier SoPhyFit license.
 
 ## [1.0.0] - 2026-10-24
 

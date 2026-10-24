@@ -29,10 +29,12 @@ jobs:
       TAG: ${{ github.event.release.tag_name || inputs.tag }}
       GH_TOKEN: ${{ github.token }}
     steps:
-      - name: Check out the released version
+      # Metadata (.zenodo.json) and scripts come from the checked-out branch (main when run by hand),
+      # so later fixes to the metadata also apply when an older release is archived again.
+      - name: Check out the repository
         uses: actions/checkout@v5
         with:
-          ref: ${{ env.TAG }}
+          fetch-depth: 0
 
       - name: Download the installer attached to the release
         run: |
@@ -44,10 +46,10 @@ jobs:
             exit 1
           fi
 
-      - name: Pack the source code
+      - name: Pack the source code of the release tag
         run: |
           NAME="${GITHUB_REPOSITORY#*/}"
-          git archive --format=zip --prefix="${NAME}-${TAG}/" -o "${RUNNER_TEMP}/${NAME}-${TAG}.zip" HEAD
+          git archive --format=zip --prefix="${NAME}-${TAG}/" -o "${RUNNER_TEMP}/${NAME}-${TAG}.zip" "refs/tags/${TAG}"
           echo "ARCHIVE=${RUNNER_TEMP}/${NAME}-${TAG}.zip" >> "$GITHUB_ENV"
 
       - name: Publish on Zenodo

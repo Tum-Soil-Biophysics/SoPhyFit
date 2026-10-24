@@ -5,6 +5,14 @@ PATCH = bug fixes, MINOR = new features, MAJOR = changes that can alter results 
 make older project files incompatible. Each entry states whether results can differ
 from the previous version.
 
+## [1.1.0] - 2026-10-24
+
+Results do not differ from version 1.0.0.
+
+- New subtitle: "Soil physics fitting tool for retention, pore-size distribution and conductivity".
+- New Cite Us tab: citation and BibTeX with the DOI of the installed version (read from its release notes), the DOI of all versions, and the references of the models.
+- About shows the DOIs.
+
 ## [1.0.0] - 2026-10-24
 
 First public release.

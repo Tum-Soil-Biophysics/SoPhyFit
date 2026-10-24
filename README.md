@@ -53,7 +53,7 @@ The **[User Guide (PDF)](docs/SoPhyFit_User_Guide.pdf)** explains the scientific
 
 If you use SoPhyFit in your work, please cite it:
 
-> Zarebanadkouki, M. (2026). SoPhyFit: Soil physics fitting tool for retention, pore-size distribution and conductivity (Version 1.0.0) [Computer software]. Technical University of Munich. Zenodo. https://doi.org/10.5281/zenodo.23626256
+> Zarebanadkouki, M. (2026). SoPhyFit: Soil physics fitting tool for retention, pore-size distribution and conductivity (Version 1.1.0) [Computer software]. Technical University of Munich. Zenodo. https://doi.org/10.5281/zenodo.23626256
 
 The DOI above (10.5281/zenodo.23626256) always resolves to the latest version. Each release is also archived on [Zenodo](https://zenodo.org/communities/tum-sbe) with its own version DOI, listed at the end of the release notes. Cite the version you used. GitHub also shows a **"Cite this repository"** button with this citation in other formats.
 

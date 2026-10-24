@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use SoPhyFit, please cite it as below."
 type: software
 title: "SoPhyFit: Soil physics fitting tool for retention, pore-size distribution and conductivity"
-version: "1.0.0"
+version: "1.1.0"
 date-released: "2026-10-24"
 authors:
   - family-names: "Zarebanadkouki"
